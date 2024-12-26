@@ -10,7 +10,6 @@ function solution(arr) {
         }
         else if (stk[stk.length -1] >= arr[i]) {
             stk.pop();
-            continue;
         }
     }
     return stk;
