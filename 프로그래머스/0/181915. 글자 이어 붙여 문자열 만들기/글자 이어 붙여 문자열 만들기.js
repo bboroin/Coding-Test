@@ -1,7 +1,5 @@
 function solution(my_string, index_list) {
-    var answer = [];
-    for (let i=0; i<index_list.length; i++) {
-        answer.push(my_string[index_list[i]]);
-    }
-    return answer.join('');
+    return index_list.reduce((acc, i) => {
+        return acc + my_string[i]
+    }, '')
 }
