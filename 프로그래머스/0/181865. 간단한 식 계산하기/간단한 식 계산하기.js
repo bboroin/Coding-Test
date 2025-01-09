@@ -3,5 +3,4 @@ function solution(binomial) {
     if (op=='+') return Number(a)+Number(b);
     if (op=='-') return Number(a)-Number(b);
     if (op=='*') return Number(a)*Number(b);
-    if (op=='/') return Number(a)/Number(b);
 }
