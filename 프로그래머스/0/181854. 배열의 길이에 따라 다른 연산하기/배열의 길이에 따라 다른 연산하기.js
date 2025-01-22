@@ -1,16 +1,13 @@
 function solution(arr, n) {
-    let answer = [];
-    if (arr.length%2==0) {
-        for(let i=0; i<arr.length; i++) {
-            if (i%2!==0) arr[i] = arr[i] + n;
-        }
-        answer = arr;
+    if (arr.length % 2) {
+        return arr.map((v, i) => {
+            if (!(i % 2)) v+=n;
+            return v;
+        })
     }
-    else {
-        for(let i=0; i<arr.length; i++) {
-            if (i%2==0) arr[i] = arr[i] + n;
-        }
-        answer = arr;
-    }
-    return answer;
+
+    return arr.map((v, i) => {
+        if (i % 2) v+=n;
+        return v;
+    })
 }
