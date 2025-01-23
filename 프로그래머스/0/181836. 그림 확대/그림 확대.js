@@ -1,10 +1,4 @@
-function solution(picture, k) {
-    let answer = []
-    picture.map(v=>{
-        let pic = [...v].map(el=>el.repeat(k)).join('');
-        for (let j=0; j<k; j++) {
-            answer.push(pic);
-        }
-    })
-    return answer;
-}
+const solution = (picture, k) =>
+    picture
+        .map(line => [...line].map(char => char.repeat(k)).join(''))
+        .flatMap(line => Array(k).fill(line));
