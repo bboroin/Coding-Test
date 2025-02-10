@@ -1,4 +1,4 @@
 function solution(n) {
-    var answer = new Array(n).fill(1).map((v, i)=> v+i).filter(v=>v = v%2)
+    let answer = Array.from({length : (n+1)/2}, (_, i)=> (i * 2) + 1 );
     return answer;
 }
