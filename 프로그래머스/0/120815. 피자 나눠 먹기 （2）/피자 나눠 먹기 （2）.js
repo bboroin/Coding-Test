@@ -1,6 +1,8 @@
 function solution(n) {
-    var answer = 0;
-    for (let i=1; i>0; i++) {
-        if (6*i%n == 0) return i
+    let p = 6;
+    while(true) {
+        if (p%n == 0) break;
+        p += 6;
     }
+    return p/6;
 }
