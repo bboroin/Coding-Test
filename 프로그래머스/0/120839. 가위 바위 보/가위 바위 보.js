@@ -1,8 +1,6 @@
 function solution(rsp) {
-    
-    return [...rsp].map(v=>{
-        if (v == '2') return 0;
-        else if (v == '0') return 5;
-        else return 2;
-    }).join('');
+    const win = {
+        '2':'0', '0':'5', '5':'2'
+    }
+    return rsp.split('').map(v=>win[v]).join('');
 }
