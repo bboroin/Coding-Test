@@ -6,8 +6,5 @@ function solution(letter) {
     '...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x',
     '-.--':'y','--..':'z'
     }
-    let key = Object.keys(morse);
-    let value = Object.values(morse);
-    
-    return letter.split(' ').map(v=>value[key.indexOf(v)]).join('')
+    return letter.split(' ').map(v=>morse[v]).join('');
 }
