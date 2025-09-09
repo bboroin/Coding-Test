@@ -1,4 +1,4 @@
 function solution(n) {
     let arr = n.toString().split('').map(v=>Number(v));
-    return arr.reduce((cur, v)=>cur=v+cur);
+    return arr.reduce((acc, cur)=>acc+cur, 0);
 }
