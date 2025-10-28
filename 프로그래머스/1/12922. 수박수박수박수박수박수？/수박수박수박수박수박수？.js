@@ -1,4 +1,4 @@
 function solution(n) {
-    var answer = Array(n).fill("수").map((_, i)=>i%2==0? "수" : "박" );
-    return answer.join("");
+    var answer = "수박";
+    return n%2===0 ? answer.repeat(n/2) : answer.repeat(n/2)+"수";
 }
