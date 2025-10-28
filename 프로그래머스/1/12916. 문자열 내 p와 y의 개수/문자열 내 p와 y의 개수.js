@@ -1,6 +1,5 @@
 function solution(s){
-    let p = s.toLowerCase().split('').filter(v=>v==='p');
-    let y = s.toLowerCase().split('').filter(v=>v==='y');
+    s = [...s.toLowerCase()];    
 
-    return p.length === y.length;
+    return s.filter(v=>v==="p").length === s.filter(v=>v==="y").length;
 }
