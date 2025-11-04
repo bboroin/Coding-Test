@@ -1,6 +1,8 @@
 function solution(num, total) {
-    const mid = Math.ceil(total / num)
-    const min = num % 2 === 0 ? mid - (num / 2) : mid - ((num - 1) / 2 )
-
-    return Array.from({ length: num }, (_, i) => min + i)
+    let start = total/num-(num-1)/2;
+    var answer = [];
+    for (let i=0; i<num; i++) {
+        answer.push(start+i);
+    }
+    return answer;
 }
