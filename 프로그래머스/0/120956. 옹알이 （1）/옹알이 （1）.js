@@ -1,20 +1,25 @@
 function solution(babbling) {
-    const arr = ["aya","ye","woo","ma"];
+  const SYLL = ["aya", "ye", "woo", "ma"];
 
-    let answer = 0;
+  const ok = (w) => {
+    const used = new Set();
+    let i = 0;
+    while (i < w.length) {
+      let hit = false;
+      for (const s of SYLL) {
+        if (!used.has(s) && w.startsWith(s, i)) {
+          used.add(s);
+          i += s.length;
+          hit = true;
+          break;
+        }
+      }
+      if (!hit) return false;
+    }
+    return true;
+  };
 
-    babbling.forEach(str => {
-     let strLength = str.length
-
-     for(let i = 0 ; i < arr.length ; i++) {
-       if(str.includes(arr[i])) 
-         strLength = strLength - arr[i].length;
-
-       if(strLength === 0) {
-         answer++;
-         break;
-       }
-     }
-    })      
-    return answer;
+  let cnt = 0;
+  for (const w of babbling) if (ok(w)) cnt++;
+  return cnt;
 }
