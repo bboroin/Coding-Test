@@ -1,19 +1,12 @@
 function solution(s, n) {
-    var answer = [];
-    for (let char of s) {
-        if (char === " ") answer.push(" ");
-        else {
-            let code = char.charCodeAt();
-            if (code >= 65 && code <= 90) {
-                code += n;
-                if (code > 90) code -= 26;
-            }
-            else {
-                code += n;
-                if (code > 122) code -= 26;
-            }
-            answer.push(String.fromCharCode(code));
-        }
+    var answer = '';
+    for (let i=0; i<s.length; i++) {
+        if (s[i] === ' ') answer += ' ';
+        else answer += String.fromCharCode(
+            (s.charCodeAt(i) > 90)
+            ? (s.charCodeAt(i) + n - 97) % 26 + 97
+            : (s.charCodeAt(i) + n - 65) % 26 + 65
+        )
     }
-    return answer.join("");
+    return answer;
 }
